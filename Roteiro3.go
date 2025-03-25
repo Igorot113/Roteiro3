@@ -2,6 +2,7 @@ package main
 
 /*adjiasjdoa*/
 import (
+	exerciciotodolist "Roteiro3/ExercicioToDoList"
 	roteiro3_1 "Roteiro3/Roteiro3_1"
 	"fmt"
 )
@@ -9,7 +10,6 @@ import (
 func main() {
 	var b float64 = 10.50
 	var p2 *float64 = &b
-	roteiro3_1.Main2()
 	fmt.Println("\nValor de b antes da modificação:", b)
 	*p2 = 20.50
 	fmt.Println("Valor de b antes da modificação:", b)
@@ -36,6 +36,41 @@ func main() {
 	list.RemoveFirst()
 	fmt.Println("Após remover o primeiro:")
 	list.Print()
+
+	listDC := roteiro3_1.DoublyLinkedList{}
+	listDC.Append(1)
+	listDC.Append(2)
+	listDC.Append(3)
+
+	fmt.Println("Lista Duplamente Encadeada do inicio para o fim:")
+	listDC.PrintForward()
+
+	fmt.Println("Lista Duplamente Encadeada do fim para o inicio:")
+	listDC.PrintBackward()
+
+	listDC.RemoveLast()
+	fmt.Println("\nApos remover o ultimo elemento:")
+	listDC.PrintForward()
+
+	listExercicio := exerciciotodolist.DoublyLinkedList2{}
+	listExercicio.Append("Estudar GO")
+	listExercicio.Append("Fazer compras")
+	listExercicio.Append("Academia")
+
+	fmt.Println("\nExercicio de Lista Encadeada: do inicio para o fim:")
+	listExercicio.PrintForward()
+
+	fmt.Println("\nExercicio de Lista Encadeada: do fim para o inicio:")
+	listExercicio.PrintBackward()
+
+	fmt.Println("\nApos remover o ultimo elemento:")
+	listExercicio.RemoveLast()
+
+	fmt.Println("\nExercicio de Lista Encadeada: do inicio para o fim:")
+	listExercicio.PrintForward()
+
+	fmt.Println("\nExercicio de Lista Encadeada: do fim para o inicio:")
+	listExercicio.PrintBackward()
 
 }
 
